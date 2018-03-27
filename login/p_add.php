@@ -20,7 +20,7 @@ if ($result->num_rows > 0) {
 	$_SESSION["rep"] = "plz using other user name";
 } else {
 
-	if (preg_match('/[A-Za-z].*/', $country))
+	if (!preg_match('/[A-Za-z].*/', $country))
 	{
 		$_SESSION["rep"] = "plz country name only has characters";
 	} else {
