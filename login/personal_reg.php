@@ -47,10 +47,16 @@ h1 {
 		<input type="radio" name="notif" value="1"> Yes
 		<input type="radio" name="notif" value="0" checked> No<br>
 		<b style="color: red"><?php echo $_SESSION["rep"];
-										$_SESSION["rep"] = " "; ?></b>
+		$_SESSION["rep"] = " "; ?></b>
 		<br>
-		<input type="submit" value="Register now">	
+		<input type="submit" value="Register now">
+		<button type="button" onclick="back()">Back to log in</button>
 	</form>
+	<script type="text/javascript">
+		function back(){
+			window.open("login_next.php","_self");
+		}
+	</script>
 
 </body>
 </html>

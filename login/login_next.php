@@ -39,7 +39,7 @@ input.hidden {
 										$_SESSION["rep"] = " "; ?></b>
 		<br>
 		<input style="visibility: hidden; width: 0px;" type="submit"  value="Log in">	
-		<button type="submit" formaction="register.php"  formmethod= "POST" formtarget="_blank">Register now</button>
+		<button type="submit" formaction="register.php"  formmethod= "POST" formtarget="_self">Register now</button>
 		<input type="submit"  value="Log in">
 		<input style="visibility: hidden; width: 0px;" type="submit"  value="Log in">	
 	</form>
