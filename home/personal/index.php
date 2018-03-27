@@ -8,7 +8,7 @@ session_start();
 <html>
 <head>
 	<title>Pesronal home page</title>
-	<link rel="stylesheet" type="text/css" href="../style/hp_style.css" />
+	<link rel="stylesheet" type="text/css" href="../../style/hp_style.css" />
 </head>
 <style>
 h1 {
@@ -36,15 +36,15 @@ iframe[seamless] {
 			<ul style="text-align: center;" id="nav">
 				<li><a href="p_info.php" target="iframe">information</a></li>
 				<li><a href="../game/gamepg.php" target="iframe">game</a></li>
-				<li><a href="../../login/index.php" target="iframe">manage review</a></li>
-				<li><a href="../../login/index.php" target="iframe">report</a></li>
+				<li><a href="../manager/sample_manager.php" target="iframe">manage review</a></li>
+				<li><a href="../../empty.html" target="iframe">report</a></li>
 				<li><a href="../../login/log_out.php">log out</a></li>
 			</ul>
 		</nav>
 
 		<div id="content_area">
 
-			<iframe src="p_info.php" name ="iframe" style="border:none;" height="600" width="100%"></iframe>
+			<iframe src="p_info.php" name ='iframe' style="border:none;" height="600" width="100%"></iframe>
 			
 		</div>
 
