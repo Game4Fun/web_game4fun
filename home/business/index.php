@@ -8,7 +8,7 @@ session_start();
 <html>
 <head>
 	<title>Business home page</title>
-	<link rel="stylesheet" type="text/css" href="../style/hp_style.css" />
+	<link rel="stylesheet" type="text/css" href="../../style/hp_style.css" />
 </head>
 <style>
 h1 {
