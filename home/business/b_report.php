@@ -1,130 +1,74 @@
 <?php
 
-include("../../mysqli_connect.php");
 session_start();
 
-//post new game
-echo 
-'<style>
+?>
 
-td, th {
-   text-align: center;
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Manger Page</title>
+</head>
+<style>
+table {
+  width: 100%;
 }
-   table, th, td {
+caption {
+  text-align: left;
+}
+td {
+  text-align: center;
+}
+table, th, td {
   border: 1px solid black;
   border-collapse: collapse;
 }
-</style>'
-;
-
-// review table
-echo "<table>
-<caption>Your Game and related reviews</caption>
-<thead>
-<tr>
-<th>Game Name</th>
-
-<th>Review Titles</th>
-<th>Added Date</th>
-<th>Content</th>
-</tr>
-</thead>
-<tbody>
-";
-
-$sql = 'SELECT G.gameID, G.gName, R.title, R.time, R.text
-FROM  game G
-INNER JOIN review R ON G.gameID = G.gameID
-WHERE G.userID = "'.$_SESSION['uid'].'"
-ORDER BY gName;
-'
-;
-$result = mysqli_query($conn, $sql);
-
-if (!$sql) {
-	die ('SQL Error: ' . mysqli_error($conn));
-}
+</style>
+<body>
 
 
-if ($result->num_rows > 0) {
-	while ($row = mysqli_fetch_array($result))
-	{
-
-		echo '<tr>
-		<td>'.$row['gName'].'</td>
-		
-		<td>'.$row['title'].'</td>
-		<td>'.$row['time'].'</td>
-		<td>'.$row['text'].'</td>'
-		;
-
-		echo '</tr>';
-	}
-
-} else {
-	echo 
-	 ''
-	;
-}
-
-echo '
-</tbody>
-</table>';
-
-mysqli_close($conn);
-
-
-?>
-
-
-
-<?php
-
-
-
-
-
-$sql = 'SELECT userName
-FROM  personaluser P
-WHERE NOT EXISTS
-      ((SELECT G.gameID FROM game G )
-	    EXCEPT
-		(SELECT R.gameID FROM review R
-		 WHERE R.userID= P.userID))'
-;
-
-
-$result = mysqli_query($conn, $sql);
-
-if (!$result) {
-	die ('SQL Error: ' . mysqli_error($conn));
-}
-
-
-?>
-
-
-<h2>Interesting information of Your supportor</h2>
+  <h2>Interesting information of Your supportor</h2>
   
-
   <h3>
-    <form action="b_report.php" method= "POST"> 
-      Do u want to know who is your biggest fan?
-      <select name="n_o" onchange="this.form.submit()">
-        <option value="???" <?php if(isset($_SESSION["g"]) && $_SESSION["g"] == "???") echo "selected";?>>???</option>
-        <option value="Yes" <?php if(isset($_SESSION["g"]) && $_SESSION["g"] == "Newest") echo "selected";?>>Newest</option>
-        <option value="No"  <?php if(isset($_SESSION["g"]) && $_SESSION["g"] == "Oldest") echo "selected";?>>Oldest</option>
+    <form action="topfan.php" method= "POST"> 
+      Do u want to know who is your super fan?
+      <select name="fan" onchange="this.form.submit()">
+        <option value="???" <?php if(isset($_SESSION["f"]) && $_SESSION["f"] == "???") echo "selected";?>>???</option>
+        <option value="Yes" <?php if(isset($_SESSION["f"]) && $_SESSION["f"] == "Yes") echo "selected";?>>Yes</option>
+        <option value="No"  <?php if(isset($_SESSION["f"]) && $_SESSION["f"] == "No") echo "selected";?>>No</option>
       </select>
       
       <?php
-      if (isset($_SESSION["g"]) && $_SESSION["g"] != "???") {
-        echo $_SESSION["gname"];
+      if (isset($_SESSION["f"]) && $_SESSION["f"] == "Yes") {
+        if ($_SESSION["nogame"] == "yes") {
+          echo "you want fan? release a game first";
+        } else {
+          if (isset($_SESSION["nofan"]) && $_SESSION["nofan"]  == "yes") {
+            echo "no super fan";
+          } else {
+            foreach ($_SESSION["fans"] as $name) {
+              echo $name;
+              echo " ";
+            }
+          }
+          
+        }
       } else {
         echo "???";
       }
       ?>
-    </form> 
+      <p style="font-size: 15px">(super fan is the one who wrote at least one of review for all your games)</p>
+    </form>
+    <br>
+    <br>
+    <?php
+    // generate form 
+    include("b_report_generator.php");
+    ?>
   </h3>
+
+</body>
+</html>
 
 
 
