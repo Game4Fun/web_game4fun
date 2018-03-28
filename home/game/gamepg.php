@@ -1,3 +1,8 @@
+<?php
+session_start();
+$_SESSION["gid"] = 2;
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -34,8 +39,8 @@
        <div class="dropdown">
         <button>sort by</button>
         <div class="dropdown-content">
-          <p>release date</p>
-          <p>category</p>
+          <p><input type="button" value="release date" onclick="location='gamepg.php'" /></p>
+          <p><input type="button" value="category" onclick="location='sort.php'" /></p>
         </div>
       </div> </br> </br>
 
@@ -59,17 +64,18 @@
       </thead>
       <tbody>';
 
+	        echo '
+      </tbody>
+      </table>';
       while ($row = mysqli_fetch_array($result))
       {
 
-        echo '<tr>
-        <td>'.$row['gName'].'</td>
-        <td>'.date_format(new DateTime($row['since']),'Y/m/d').'</td>
-        </tr>';
+     ?><p><a href="gameP.php?gid=<?php echo $row['gameID']?>"><?php echo $row['gName']?>   </a> <?php echo $row['since']?> </p> 
+	   
+	 <?php
+  
       }
-      echo '
-      </tbody>
-      </table>';
+
 
 
       mysqli_close($conn);
@@ -77,6 +83,7 @@
 
     </div>			
 
+	
 
   </form>
 
