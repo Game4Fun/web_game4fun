@@ -7,7 +7,10 @@ session_unset();
 // destroy the session
 session_destroy();
 
-header("Location: ../index.php");
+echo '<script type="text/javascript">
+window.open("../index.php");
+window.close("log_out.php");
+</script>';
 exit;
 
 ?>
