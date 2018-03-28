@@ -37,7 +37,6 @@ iframe[seamless] {
 				<li><a href="a_info.php" target="iframe">information</a></li>
 				<li><a href="a_reset_personal.php" target="iframe">personal user</a></li>
 				<li><a href="a_reset_business.php" target="iframe">business user</a></li>
-				<li><a href="../../index.php" target="iframe">report</a></li>
 				<li><a href="../../login/log_out.php">log out</a></li>
 			</ul>
 		</nav>
