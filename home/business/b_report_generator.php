@@ -19,7 +19,7 @@ echo "<table>
 
 $sql = 'SELECT G.gameID, G.gName, R.title, R.time, R.text
 FROM  game G
-INNER JOIN review R ON G.gameID = G.gameID
+INNER JOIN review R ON G.gameID = R.gameID
 WHERE G.userID = "'.$_SESSION['uid'].'"
 ORDER BY gName;
 '
