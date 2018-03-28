@@ -19,3 +19,7 @@ input
 {
 	color: black;
 }
+
+:-ms-input-placeholder {
+    color: grey;
+}

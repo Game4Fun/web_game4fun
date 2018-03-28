@@ -29,13 +29,13 @@
 
 		if ($stmt->execute()) {
 			//insert fail
-			$_SESSION["rep"] = "register success, try log in";
+			$_SESSION["rep"] = "You have successfully registered. You can login now.";
 			header("Location: login_next.php");
 			exit;
 
 		} else {
 			//insert fail
-			$_SESSION["rep"] = "register fail, plz try again";
+			$_SESSION["rep"] = "Registration failed! Please try again later.";
 		}
 
 	}
