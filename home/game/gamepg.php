@@ -64,7 +64,7 @@ td, th {
 
       include("../../mysqli_connect.php");
 
-      $sql = 'SELECT gameID,gName,since FROM game';
+      $sql = 'SELECT gameID,gName,since FROM game ORDER BY since DESC';
       $result = mysqli_query($conn, $sql);
 
       if (!$sql) {
