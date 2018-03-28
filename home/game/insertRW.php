@@ -2,7 +2,7 @@
 include("../../mysqli_connect.php");
 session_start();
 
-_SESSION['rres']="";
+$_SESSION['rres']="";
 
 ?>
 
