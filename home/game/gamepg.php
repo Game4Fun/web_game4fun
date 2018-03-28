@@ -28,6 +28,22 @@ $_SESSION["gid"] = 2;
   }
   body{ font: 14px sans-serif; }
   .wrapper{ width: 350px; padding: 20px; }
+  
+      body{ font: 14px sans-serif; }
+    .wrapper{ width: 350px; padding: 20px; }
+	table {
+     width: 100%;
+}
+
+td, th {
+   text-align: center;
+}
+   table, th, td {
+  border: 1px solid black;
+  border-collapse: collapse;
+}
+  
+  
 </style>
 </head>
 <body>
@@ -64,17 +80,26 @@ $_SESSION["gid"] = 2;
       </thead>
       <tbody>';
 
-	        echo '
-      </tbody>
-      </table>';
+	        
+     
       while ($row = mysqli_fetch_array($result))
       {
 
-     ?><p><a href="gameP.php?gid=<?php echo $row['gameID']?>"><?php echo $row['gName']?>   </a> <?php echo $row['since']?> </p> 
-	   
-	 <?php
-  
-      }
+    
+     echo "<tr> 
+	 <td>  
+     
+	 <a href='gameP.php?gid=".$row['gameID']."'> "
+	 
+	
+	 .$row['gName']." </a> </td>
+     <td> ".$row['since']."
+	 </td>
+	  </tr>";
+	  }
+	  echo "
+	  </tbody>
+      </table>";
 
 
 

@@ -21,7 +21,7 @@ session_start();
 
 
         if ($conn->query($sql) === TRUE) {
-       $_SESSION['tres'] = "New record created successfully";
+       $_SESSION['tres'] = "Thank u for your thumbup";
              header("Location: gameP.php");
        } else {
        $_SESSION['tres'] = "You can not thumbup it twice";
