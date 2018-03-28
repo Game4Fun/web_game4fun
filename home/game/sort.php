@@ -2,8 +2,26 @@
 session_start();
 if(isset($_POST['sortT'])) {$_SESSION['sortT']=$_POST['sortT'];}
 if(isset($_POST['submit'])) {$_SESSION['submit']=$_POST['submit'];}
-if(isset($_POST['check_list'])) {$_SESSION['check_list']=$_POST['check_list'];}
+$ch1="";
 
+$ch2="";
+
+$ch3=""; 
+
+$ch4="";
+
+if(isset($_POST['check_list'])) 
+{$_SESSION['check_list']=$_POST['check_list'];
+
+
+ foreach($_POST['check_list'] as $selected){
+       if ($selected ==  "gameID")    {$ch1 = "checked";}
+	   if ($selected ==  "since")     {$ch2 = "checked";}
+	   if ($selected ==  "gameInfo")  {$ch3 = "checked";}
+	   if ($selected ==  "Company" )  {$ch4 = "checked";}
+     }
+
+}
 
 $attribute = "gName";
 
@@ -68,11 +86,11 @@ td, th {
 		 
 		 Things that you want to display   GameName must be shown<br>
 		 
-		 <input name="check_list[]" type="checkbox" value="gName" onclick="return false;" checked = 'checked'/><label>GameName</label><br>
-		 <input name="check_list[]" type="checkbox" value="gameID" checked='' /><label>GameID</label><br>
-		 <input name="check_list[]" type="checkbox" value="since"  checked='' /><label>Release Date</label><br>
-		 <input name="check_list[]" type="checkbox" value="gameInfo"checked='' /><label>Game Info</label><br>
-		 <input name="check_list[]" type="checkbox" value="Company" checked='' /><label>Company</label><br>
+		 <input name="check_list[]" type="checkbox" value="gName" onclick="return false;" checked /><label>GameName</label><br>
+		 <input name="check_list[]" type="checkbox" value="gameID"   <?php echo trim($ch1,"");?> /><label>GameID</label><br>
+		 <input name="check_list[]" type="checkbox" value="since"    <?php echo trim($ch2,"");?> /><label>Release Date</label><br>
+		 <input name="check_list[]" type="checkbox" value="gameInfo" <?php echo trim($ch3,"");?> /><label>Game Info</label><br>
+		 <input name="check_list[]" type="checkbox" value="Company"  <?php echo trim($ch4,"");?> /><label>Company</label><br>
          <input type="submit" name="submit" value="Show"/>
         
        </br> </br>
