@@ -1,3 +1,8 @@
+<?php
+
+session_start();
+
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -23,54 +28,81 @@
   }
   body{ font: 14px sans-serif; }
   .wrapper{ width: 350px; padding: 20px; }
+  table {
+    width: 100%;
+  }
+  td {
+    text-align: center;
+  }
+  table, th, td {
+    border: 1px solid black;
+    border-collapse: collapse;
+  }
 </style>
 </head>
-<body background="E:\wamp64\www\game4fun3\wallpaper.jpg">
-<body><font color="white">
-  <div class="wrapper">
-    <h2>Business User</h2>
-    <form action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]); ?>" method="post">
+<body>
+  <body><font>
+    <div class="wrapper">
+      <h2>Business User</h2>
       <die class="form-group">
-      </div> </br> </br>
-
-      <?php
-
-        include("../../mysqli_connect.php");
-        
-        $sql = 'SELECT userName,password FROM businessuser';
-        $result = mysqli_query($conn, $sql);
-
-        if (!$sql) {
-          die ('SQL Error: ' . mysqli_error($conn));
-        }
-
-          echo '<table><thead><tr>
-              <th><p style="text-align: center;">Name</p></th>
-              <th><p style="text-align: center;">Password</p></th>
-          </tr></thead><tbody>';
-
-          while ($row = mysqli_fetch_array($result)){
-            echo '<tr>
-                <td><p style="text-align: center;">'.$row['userName'].'</p></td>
-                <td><p style="text-align: center;">'.$row['password'].'</p></td>
-                <input type="reset" value="Reset" class="btn btn-primary" />
-            </tr>';
-          }
-
-          echo '</tbody></table>';
-
-        mysqli_close($conn);
-
+      </div> </br> 
+      <b style="color: red"><?php echo $_SESSION["rep"];
+      $_SESSION["rep"] = " "; 
       ?>
+    </b>
+  </br>
 
-    </div>			
+  <?php
+
+  include("../../mysqli_connect.php");
+
+  $sql = 'SELECT * FROM businessuser';
+  $result = mysqli_query($conn, $sql);
+
+  if (!$sql) {
+    die ('SQL Error: ' . mysqli_error($conn));
+  }
+
+  echo '<table><thead><tr>
+  <th><p style="text-align: center;">User ID</p></th>
+  <th><p style="text-align: center;">Name</p></th>
+  <th><p style="text-align: center;">Email</p></th>
+  <th><p style="text-align: center;">Nnotification</p></th>
+  <th><p style="text-align: center;">Official Site</p></th>
+  <th><p style="text-align: center;">Password</p></th>
+  <th><p style="text-align: center;">Reset password to 888</p></th>
+  </tr></thead><tbody>';
+
+  while ($row = mysqli_fetch_array($result)){
+    echo '<tr>
+    <td><p style="text-align: center;">'.$row['userID'].'</p></td>
+    <td><p style="text-align: center;">'.$row['userName'].'</p></td>
+    <td><p style="text-align: center;">'.$row['mail'].'</p></td>
+    <td><p style="text-align: center;">';
+    if ($row["notification"] == "1") {
+      echo "YES";
+    } else {
+      echo "No";
+    }
+    echo '</p></td>
+    <td><p style="text-align: center;">'.$row['officialSite'].'</p></td>
+    <td><p style="text-align: center;">'.$row['password'].'</p></td>
+    <td><form>
+    <form>
+    <button type="submit" name="business" value="'.$row["userID"].'" formaction="rest.php"  formmethod= "POST" formtarget="iframe">rest</button>
     </form>
+    </form></td>
+    </tr>';
+  }
+
+  echo '</tbody></table>';
+
+  mysqli_close($conn);
+
+  ?>
+
+</div>			
 </div>
 </font></body>
-
-<div id="footer"><p style="text-align: center;"><font color="white">
-  &copy; All rights reserved by Game4Fun Group
-</font> 
-</p></div>
 
 </html>
