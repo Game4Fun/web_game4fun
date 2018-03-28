@@ -1,6 +1,6 @@
 <?php
 session_start();
-$_SESSION["gid"] = 2;
+
 ?>
 
 <!DOCTYPE html>
