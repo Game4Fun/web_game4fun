@@ -80,7 +80,7 @@ td, th {
 	     <input type="submit" value="RACING"  name="sortT"   />
 	     <input type="submit" value="RPG"     name="sortT"   />
 	     <input type="submit" value="SPORTS"  name="sortT"   />
-	     <input type="submit" value="OTHER"   name="sortT"   />
+	
 		 <br>
 		 <br>
 		 
