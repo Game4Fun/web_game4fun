@@ -1,4 +1,5 @@
 <?php
+include("../../mysqli_connect.php");
 session_start();
 if(isset($_POST['sortT'])) {$_SESSION['sortT']=$_POST['sortT'];}
 if(isset($_POST['submit'])) {$_SESSION['submit']=$_POST['submit'];}
@@ -75,11 +76,25 @@ td, th {
     <h2>GameList</h2>
     <p>Game released so far.</p>
          <form action="sort.php" method="post">
-         <input type="submit" value="ACTION"  name="sortT"   />
-		 <input type="submit" value="FREE"    name="sortT"   />
-	     <input type="submit" value="RACING"  name="sortT"   />
-	     <input type="submit" value="RPG"     name="sortT"   />
-	     <input type="submit" value="SPORTS"  name="sortT"   />
+		 
+		 <?php 
+	  $sql = 'SELECT cName FROM category';
+      $result = mysqli_query($conn, $sql);
+
+      if (!$result) {
+        die ('SQL Error: ' . mysqli_error($conn));
+	  }
+		while ($row = mysqli_fetch_array($result)){
+			
+		?><input type="submit" value= <?php echo $row['cName']; ?>  name="sortT" /><?php
+			
+		}
+      
+		 ?>
+		 
+
+		 
+
 	
 		 <br>
 		 <br>
@@ -113,7 +128,7 @@ td, th {
 
        if(isset($_SESSION['sortT'])){
 			       
-      include("../../mysqli_connect.php");
+
 
       $sql = 'SELECT G.gameID,gName,since,gameInfo,userID FROM game G,belong B WHERE G.gameID=B.gameID AND B.cname = "'.$_SESSION['sortT'].'"';
       $result = mysqli_query($conn, $sql);
