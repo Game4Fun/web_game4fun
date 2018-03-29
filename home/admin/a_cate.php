@@ -36,7 +36,7 @@ session_start();
   <table class="table table-bordered table-striped">
     <thead>
       <tr>
-        <th>Category Name</th>
+        
       </tr>
     </thead>
     <tbody id="myTable">
