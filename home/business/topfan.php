@@ -29,13 +29,8 @@ if(isset($_POST["fan"])) {
 				while($row = $result->fetch_assoc()) {
 					array_push($_SESSION["fans"], $row["userName"]);
 				}
-			} else {
-				$_SESSION["rep"]  = " no super fan for you right now";
-			}
-
-		} else {
-			$_SESSION["rep"]  = " you want a fan, plz release a Game first";
-		}
+			} 
+		} 
 	}
 }
 

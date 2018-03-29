@@ -45,12 +45,11 @@ table, th, td {
             echo $name;
             echo " ";
           }
+        } else {
+          echo "no super fan for you";
         }
-        echo $_SESSION["rep"];
-        $_SESSION["rep"] = "";
       } else {
         echo "???";
-        $_SESSION["rep"] = "";
       }
       ?>
       <p style="font-size: 15px">(super fan is the one who wrote at least one of review for all your games)</p>
