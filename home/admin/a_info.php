@@ -39,7 +39,7 @@ session_start();
 		<b style="color: red"><?php echo $_SESSION["rep"];
 										$_SESSION["rep"] = " "; ?></b>
 		<br>
-		<input type="reset" value="reset to previous">
+		<input type="reset" value="reset">
 		<input type="submit" value="update">	
 	</form>
 

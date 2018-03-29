@@ -70,7 +70,7 @@ session_start();
   <th><p style="text-align: center;">Nnotification</p></th>
   <th><p style="text-align: center;">Official Site</p></th>
   <th><p style="text-align: center;">Password</p></th>
-  <th><p style="text-align: center;">Reset password to 888</p></th>
+  <th><p style="text-align: center;">Update</p></th>
   </tr></thead><tbody>';
 
   while ($row = mysqli_fetch_array($result)){
@@ -89,7 +89,7 @@ session_start();
     <td><p style="text-align: center;">'.$row['password'].'</p></td>
     <td><form>
     <form>
-    <button type="submit" name="business" value="'.$row["userID"].'" formaction="rest.php"  formmethod= "POST" formtarget="iframe">rest</button>
+    <button type="submit" name="bid" value="'.$row["userID"].'" formaction="update_b.php"  formmethod= "POST" formtarget="iframe">update</button>
     </form>
     </form></td>
     </tr>';
