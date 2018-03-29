@@ -1,5 +1,8 @@
 <?php
 session_start();
+unset($_SESSION['check_list']);
+unset($_SESSION['submit']);
+unset($_SESSION['sortT']);
 
 ?>
 
