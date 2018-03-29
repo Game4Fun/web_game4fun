@@ -41,11 +41,11 @@ if ($_SESSION["utype"] == "Personal") {
 			header("Location: ../home/personal/index.php");
 			exit;
 		} else {
-			$_SESSION["rep"]  = "plz enter correct password";
+			$_SESSION["rep"]  = "Please enter the correct password.";
 		}
 
 	} else {
-		$_SESSION["rep"]  = "no such personal user";
+		$_SESSION["rep"]  = "No such personal user found!";
 	}
 
 } else if ($_SESSION["utype"] == "Business") {
@@ -68,11 +68,11 @@ if ($_SESSION["utype"] == "Personal") {
 			header("Location: ../home/business/index.php");
 			exit;
 		} else {
-			$_SESSION["rep"] = "plz enter correct password";
+			$_SESSION["rep"] = "Please enter the correct password.";
 		}
 
 	} else {
-		$_SESSION["rep"] = "no such business user";
+		$_SESSION["rep"] = "No such business user found!";
 	}
 } else {
 	$sql = "SELECT * FROM webadmin WHERE userName = '".$uname."' LIMIT 1";
@@ -93,11 +93,11 @@ if ($_SESSION["utype"] == "Personal") {
 			header("Location: ../home/admin/index.php");
 			exit;
 		} else {
-			$_SESSION["rep"] = "plz enter correct password";
+			$_SESSION["rep"] = "Please enter the correct password.";
 		}
 
 	} else {
-		$_SESSION["rep"] = "no such admin";
+		$_SESSION["rep"] = "No such admin found!";
 	}
 }
 
