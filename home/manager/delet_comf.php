@@ -6,15 +6,16 @@
 <style>
 </style>
 <body>
-	<form style="text-align: left;" action="sample_manager.php" target="_self">
+	<br>
+	<form style="text-align: center; font-size: 20" action="sample_manager.php" target="_self">
 		<caption><?php
-		echo "Are you sure you want to delet this ";
+		echo "Are you sure you want to <span style ='color: red; font-size: 20px'>delet</spawn> this ";
 		if (isset($_POST["gid"])) {
-			echo "game";
+			echo "<span style ='color: red; size: 20'>game</spawn>";
 		} elseif (isset($_POST["rid"])) {
-			echo "review";
+			echo "<span style ='color: red; size: 20'>review</spawn>";
 		} else {
-			echo "comment";
+			echo "<span style ='color: red; size: 20'>comment</spawn>";
 		}
 		echo " ???";
 		?></caption>

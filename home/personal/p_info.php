@@ -8,6 +8,7 @@ session_start();
 <html>
 <head>
 	<title>Personal User update Page</title>
+	<script src="http://ajax.googleapis.com/ajax/libs/jquery/2.1.0/jquery.min.js"></script>
 </head>
 <style>
 </style>
@@ -42,10 +43,10 @@ session_start();
 		Country:<br>
 		<select  name="country" style="color:black">
 			<option value="" <?php if($_SESSION["ucountry"] == "") { echo "selected";}?>></option>
-    <option value="Afghanistan"  <?php if($_SESSION["ucountry"] == "Afghanistan") { echo "selected";}?>>Afghanistan</option>
-    <option value="Albania" <?php if($_SESSION["ucountry"] == "Albania") { echo "selected";}?>>Albania</option>
-    <option value="Algeria"  <?php if($_SESSION["ucountry"] == "Algeria") { echo "selected";}?>>Algeria</option>
-</select>
+			<option value="Afghanistan"  <?php if($_SESSION["ucountry"] == "Afghanistan") { echo "selected";}?>>Afghanistan</option>
+			<option value="Albania" <?php if($_SESSION["ucountry"] == "Albania") { echo "selected";}?>>Albania</option>
+			<option value="Algeria"  <?php if($_SESSION["ucountry"] == "Algeria") { echo "selected";}?>>Algeria</option>
+		</select>
 		<br>
 		<br>
 		<span style="color: red">*</span>
@@ -54,11 +55,26 @@ session_start();
 		<input type="radio" name="notif" value="0" <?php if($_SESSION["unotif"] == "0") { echo "checked";}?>> No
 		<br>
 		<b style="color: red"><?php echo $_SESSION["rep"];
-										$_SESSION["rep"] = " "; ?></b>
+		$_SESSION["rep"] = " "; ?></b>
 		<br>
 		<input type="reset" value="rest to previous">
 		<input type="submit" value="update">	
 	</form>
+
+	<script type="text/javascript">
+		$(document).ready(function () {
+			$('#checkBtn').click(function() {
+				checked = $("input[type=checkbox]:checked").length;
+
+				if(!checked) {
+					alert("You must check at least one checkbox.");
+					return false;
+				}
+
+			});
+		});
+
+	</script>
 
 </body>
 </html>

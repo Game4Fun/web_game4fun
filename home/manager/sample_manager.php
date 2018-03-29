@@ -25,7 +25,7 @@ table, th, td {
 }
 </style>
 <body>
-  <h2 style="text-align: left;">
+  <h1 style="text-align: center;">
     <?php
     if ($_SESSION["utype"] == "Personal") {
       echo "Review and Comentray";
@@ -34,7 +34,7 @@ table, th, td {
     }
     ?>
     Manger
-  </h2>
+  </h1>
   <br>
   <h3>
     <b style="color: red">
