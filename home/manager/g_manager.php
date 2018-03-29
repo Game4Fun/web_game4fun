@@ -11,12 +11,12 @@ echo "<form style='text-align: right;' action='g_add.php' target='_self'>
 
 // review table
 echo "<table>
-<caption>Your reviews</caption>
+<caption>Your Games</caption>
 <thead>
 <tr>
 <th>Game Name</th>
 <th>Number of reviews</th>
-<th>added date</th>
+<th>Release date</th>
 <th>Operation</th>
 </tr>
 </thead>

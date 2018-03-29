@@ -30,16 +30,14 @@ if(isset($_POST["fan"])) {
 					array_push($_SESSION["fans"], $row["userName"]);
 				}
 			} else {
-				$_SESSION["nofan"]  = "yes";
+				$_SESSION["rep"]  = " no super fan for you right now";
 			}
 
 		} else {
-			$_SESSION["nogame"]  = "yes";
+			$_SESSION["rep"]  = " you want a fan, plz release a Game first";
 		}
 	}
 }
-
-
 
 
 mysqli_close($conn);

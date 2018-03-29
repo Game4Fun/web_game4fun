@@ -27,7 +27,7 @@ table, th, td {
 <body>
 
 
-  <h2>Interesting information of Your supportor</h2>
+  <h1 style="text-align: center;">Interesting information of Your supportor</h1>
   
   <h3>
     <form action="topfan.php" method= "POST"> 
@@ -40,21 +40,17 @@ table, th, td {
       
       <?php
       if (isset($_SESSION["f"]) && $_SESSION["f"] == "Yes") {
-        if ($_SESSION["nogame"] == "yes") {
-          echo "you want fan? release a game first";
-        } else {
-          if (isset($_SESSION["nofan"]) && $_SESSION["nofan"]  == "yes") {
-            echo "no super fan";
-          } else {
-            foreach ($_SESSION["fans"] as $name) {
-              echo $name;
-              echo " ";
-            }
+        if(isset($_SESSION["fans"])) {
+          foreach ($_SESSION["fans"] as $name) {
+            echo $name;
+            echo " ";
           }
-          
         }
+        echo $_SESSION["rep"];
+        $_SESSION["rep"] = "";
       } else {
         echo "???";
+        $_SESSION["rep"] = "";
       }
       ?>
       <p style="font-size: 15px">(super fan is the one who wrote at least one of review for all your games)</p>

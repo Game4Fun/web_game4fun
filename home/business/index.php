@@ -37,7 +37,7 @@ iframe[seamless] {
 				<li><a href="b_info.php" target="iframe">Business user information</a></li>
 				<li><a href="../game/gamepg.php" target="iframe">game</a></li>
 				<li><a href="../manager/sample_manager.php" target="iframe">manage game</a></li>
-				<li><a href="b_report.php" target="iframe">report</a></li>
+				<li><a href="b_r.php" target="iframe">report</a></li>
 				<li><a href="../../login/log_out.php">log out</a></li>
 			</ul>
 		</nav>
