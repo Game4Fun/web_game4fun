@@ -35,9 +35,10 @@ iframe[seamless] {
 		<nav id="navigation">
 			<ul style="text-align: center;" id="nav">
 				<li><a href="a_info.php" target="iframe">Admin information</a></li>
-				<li><a href="a_reset_personal.php" target="iframe">personal user</a></li>
-				<li><a href="a_reset_business.php" target="iframe">business user</a></li>
-				<li><a href="../../login/log_out.php">log out</a></li>
+				<li><a href="a_reset_personal.php" target="iframe">Personal user</a></li>
+				<li><a href="a_reset_business.php" target="iframe">Business user</a></li>
+				<li><a href="a_cate.php" target="iframe">Category manager</a></li>
+				<li><a href="../../login/log_out.php">Log out</a></li>
 			</ul>
 		</nav>
 
