@@ -32,7 +32,7 @@ session_start();
 		<br>
 		<span style="color: red">*</span>
 		Password(less than 30 character):<br>
-		<input type="text" name="psw" value="" maxlength="30" required>
+		<input type="password" name="psw" value="" maxlength="30" required>
 		<br>
 		<br>
 		Official site:<br>
