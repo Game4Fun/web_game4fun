@@ -34,7 +34,7 @@ iframe[seamless] {
 
 		<nav id="navigation">
 			<ul style="text-align: center;" id="nav">
-				<li><a href="b_info.php" target="iframe">information</a></li>
+				<li><a href="b_info.php" target="iframe">Business user information</a></li>
 				<li><a href="../game/gamepg.php" target="iframe">game</a></li>
 				<li><a href="../manager/sample_manager.php" target="iframe">manage game</a></li>
 				<li><a href="b_report.php" target="iframe">report</a></li>
