@@ -8,6 +8,14 @@ session_start();
 <html>
 <head>
 	<title>admin home page</title>
+<!-- Latest compiled and minified CSS -->
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+
+	<!-- jQuery library -->
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+
+	<!-- Latest compiled JavaScript -->
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 	<link rel="stylesheet" type="text/css" href="../../style/hp_style.css" />
 </head>
 <style>
@@ -32,25 +40,44 @@ iframe[seamless] {
 			<h1 style="text-align: center;">WELCOME TO GAME4FUN!</h1>             
 		</div>
 
-		<nav id="navigation">
-			<ul style="text-align: center;" id="nav">
-				<li><a href="a_info.php" target="iframe">Admin information</a></li>
-				<li><a href="a_reset_personal.php" target="iframe">Personal user</a></li>
-				<li><a href="a_reset_business.php" target="iframe">Business user</a></li>
-				<li><a href="a_cate.php" target="iframe">Category manager</a></li>
-				<li><a href="../../login/log_out.php">Log out</a></li>
-			</ul>
-		</nav>
+		<nav class="navbar navbar-inverse">
+			<div class="container-fluid">
+				<div class="navbar-header">
+					<a class="navbar-brand"  href="#">Game4fun</a>
+				</div>
+				<ul class="nav navbar-nav">
+					<li><a href="a_info.php" target="iframe">Account information</a></li>
+					<li class="dropdown">
+						<a class="dropdown-toggle" data-toggle="dropdown" href="#">User manage
+							<span class="caret"></span></a>
+							<ul class="dropdown-menu">
+								<li><a href="a_reset_personal.php" target="iframe">Personal manage</a></li>
+								<li><a href="a_reset_business.php" target="iframe">Business manage</a></li>
+							</ul>
+						</li>
+						<li><a href="a_cate.php" target="iframe">Category manage</a></li>
+					</ul>
+					<form class="navbar-form navbar-left" action="">
+						<div class="form-group">
+							<input type="text" class="form-control" placeholder="Search ...">
+						</div>
+						<button type="submit" class="btn btn-default"> <i class="glyphicon glyphicon-search"></i></button>
+					</form>
+					<ul class="nav navbar-nav navbar-right">
+						<li><a href="../../login/log_out.php"><span class="glyphicon glyphicon-log-out"></span> Log out</a></li>
+					</ul>
+				</div>
+			</nav>
 
-		<div id="content_area">
+			<div id="content_area">
 
-			<iframe src="a_info.php" name ="iframe" style="border:none;" height="600" width="100%"></iframe>
-			
-		</div>
+				<iframe src="a_info.php" name ="iframe" style="border:none;" height="600" width="100%"></iframe>
 
-		<footer>
-			<p>All rights reserved by Game4Fun Group</p>
-		</footer>
-	</div>	
-</body>
-</html>
+			</div>
+
+			<footer>
+				<p>All rights reserved by Game4Fun Group</p>
+			</footer>
+		</div>	
+	</body>
+	</html>
