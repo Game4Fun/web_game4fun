@@ -33,11 +33,25 @@ iframe[seamless] {
 	display: block;
 }
 
+.header-img
+{
+	z-index:9;
+	width:97%;
+	height:200px;
+	position:absolute;
+}
+
 </style>
 <body>
+	<div id="all">
 	<div id="wrapper">
-		<div id="banner">
-			<h1 style="text-align: center;">WELCOME TO GAME4FUN!</h1>             
+		<!--header-->
+		<div class="row" id="header">
+			<div class="col-xs-12">
+				<img src="../../pic/gamer.jpg" class="img-responsive  header-img">
+			</div>
+		</div>
+		<div id="banner">         
 		</div>
 
 		<nav class="navbar navbar-inverse">
@@ -78,6 +92,7 @@ iframe[seamless] {
 			<footer>
 				<p>All rights reserved by Game4Fun Group</p>
 			</footer>
+		</div>
 		</div>	
 	</body>
 	</html>
