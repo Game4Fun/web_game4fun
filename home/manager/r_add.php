@@ -43,7 +43,7 @@ textarea {
 		Text:<br>
 		<textarea type="text" name="text" required></textarea>
 		<br>
-		<input type="reset" value="rest to empty">
+		<input type="reset" value="reset">
 		<input type="submit" value="post">	
 	</form>
 </body>

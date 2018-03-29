@@ -8,7 +8,6 @@ session_start();
 <html>
 <head>
 	<title>Personal User update Page</title>
-	<script src="http://ajax.googleapis.com/ajax/libs/jquery/2.1.0/jquery.min.js"></script>
 </head>
 <style>
 </style>
@@ -57,24 +56,8 @@ session_start();
 		<b style="color: red"><?php echo $_SESSION["rep"];
 		$_SESSION["rep"] = " "; ?></b>
 		<br>
-		<input type="reset" value="rest to previous">
+		<input type="reset" value="reset">
 		<input type="submit" value="update">	
 	</form>
-
-	<script type="text/javascript">
-		$(document).ready(function () {
-			$('#checkBtn').click(function() {
-				checked = $("input[type=checkbox]:checked").length;
-
-				if(!checked) {
-					alert("You must check at least one checkbox.");
-					return false;
-				}
-
-			});
-		});
-
-	</script>
-
 </body>
 </html>

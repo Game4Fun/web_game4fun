@@ -35,10 +35,10 @@ iframe[seamless] {
 		<nav id="navigation">
 			<ul style="text-align: center;" id="nav">
 				<li><a href="p_info.php" target="iframe">Personal user information</a></li>
-				<li><a href="../game/gamepg.php" target="iframe">game</a></li>
-				<li><a href="../manager/sample_manager.php" target="iframe">manage review</a></li>
-				<li><a href="p_r.php" target="iframe">report</a></li>
-				<li><a href="../../login/log_out.php">log out</a></li>
+				<li><a href="../game/gamepg.php" target="iframe">Game</a></li>
+				<li><a href="../manager/sample_manager.php" target="iframe">Manage reviews</a></li>
+				<li><a href="p_r.php" target="iframe">Report</a></li>
+				<li><a href="../../login/log_out.php">Log out</a></li>
 			</ul>
 		</nav>
 

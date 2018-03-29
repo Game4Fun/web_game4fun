@@ -43,7 +43,7 @@ textarea {
 		<b style="color: red"><?php echo $_SESSION["rep"];
 		$_SESSION["rep"] = " "; ?></b>
 		<br>
-		<input type="reset" value="rest to previous">
+		<input type="reset" value="reset">
 		<input type="submit" value="update">	
 	</form>
 </body>
