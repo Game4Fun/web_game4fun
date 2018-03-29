@@ -36,21 +36,7 @@ $attribute = "gName";
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.css">
   <style type="text/css">
   <style>
-  .dropdown {
-    position: relative;
-    display: inline-block;
-  }
-  .dropdown-content {
-    display: none;
-    position: absolute;
-    background-color: #f9f9f9;
-    min-width: 160px;
-    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
-    padding: 12px 16px;
-  }
-  .dropdown:hover .dropdown-content {
-    display: block;
-  }
+
   body{ font: 14px sans-serif; }
   .wrapper{ width: 350px; padding: 20px; }
   
@@ -69,12 +55,24 @@ td, th {
 }
   
   
+  
 </style>
 </head>
 <body>
-  
+    <div class="wrapper">
     <h2>GameList</h2>
     <p>Game released so far.</p>
+	<form style="text-align: left;" action="gamepg.php"   method= "POST">
+		<br>
+        Sort By <br>
+	    <input onchange='this.form.submit();'type="radio" name="sortt" value="Release Date"> Release Date
+		<input onchange='this.form.submit();'type="radio" name="sortt" value="Category" checked> Category
+
+
+	</form>
+	
+		
+	
          <form action="sort.php" method="post">
 		 
 		 <?php 
@@ -109,7 +107,7 @@ td, th {
          <input type="submit" name="submit" value="Show"/>
         
        </br> </br>
-
+       </div>
 	   
 	  <?php
      if(isset($_POST['submit'])){//to run PHP script on submit
@@ -140,16 +138,18 @@ td, th {
       echo '<table>
       <thead>
       <tr>      
-	  <th>GName</th>';
+	  <th>Game Name</th>';
      
 
       if(isset($_SESSION['check_list'])){	 
 	  foreach($_SESSION['check_list'] as $selected){
 		
-       	if($selected=="gName"){echo "";}else{
-		echo trim('<th>'.$selected.'</th>','"') ;}
+		if($selected=="gameID") {echo trim("<th> Game ID </th>",'"');}
+        if($selected=="gameInfo"){echo trim("<th>Game Information </th>",'""');}
+      	if($selected=="since") {echo trim("<th> Release Date </th>",'"');}
+  	    if($selected=="Company") {echo trim("<th> Company </th>",'"');}
+       	if($selected=="gName"){echo "";}
 	  }
-	  
 	  }
      
    	 echo
