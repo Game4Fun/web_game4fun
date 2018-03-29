@@ -12,7 +12,7 @@ session_start();
  if(isset($_POST['comment'])){
     
 	
-	    $sql ='SELECT COUNT(*) FROM commentary';
+	    $sql ='SELECT MAX(cID) FROM commentary';
 		$result = mysqli_query($conn,$sql);
 				if (!$result) {
         die ('SQL Error: ' . mysqli_error($conn));
@@ -21,7 +21,7 @@ session_start();
 		 $cid = 0;
 		if($row = mysqli_fetch_array($result)){
 			
-			$cid = $row['COUNT(*)'] + 1;
+			$cid = $row['MAX(cID)'] + 1;
 		}
 	    
 		

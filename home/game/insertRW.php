@@ -13,7 +13,7 @@ $_SESSION['rres']="";
  if(isset($_POST['title']) && isset($_POST['reviewText'])){
     
 	
-	    $sql ='SELECT COUNT(*) FROM review';
+	    $sql ='SELECT MAX(rID) FROM review';
 		$result = mysqli_query($conn,$sql);
 				if (!$result) {
         die ('SQL Error: ' . mysqli_error($conn));
@@ -24,7 +24,7 @@ $_SESSION['rres']="";
 		
 		if($row = mysqli_fetch_array($result)){
 			
-			$rid = $row['COUNT(*)'] + 1;
+			$rid = $row['MAX(rID)'] + 1;
 		}
 	    
 		$title=$_POST['title'];
