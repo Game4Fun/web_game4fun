@@ -34,7 +34,12 @@ session_start();
 		<input type="number" name="age" value=<?php echo $_SESSION["uage"];?> min="0" max="100">
 		<br>
 		Country:<br>
-		<input type="text" name="country" maxlength="20" value=<?php echo $_SESSION["ucountry"];?>>
+		<select  name="country" style="color:black">
+			<option value="" <?php if($_SESSION["ucountry"] == "") { echo "selected";}?>></option>
+    <option value="Afghanistan"  <?php if($_SESSION["ucountry"] == "Afghanistan") { echo "selected";}?>>Afghanistan</option>
+    <option value="Albania" <?php if($_SESSION["ucountry"] == "Albania") { echo "selected";}?>>Albania</option>
+    <option value="Algeria"  <?php if($_SESSION["ucountry"] == "Algeria") { echo "selected";}?>>Algeria</option>
+</select>
 		<br>
 		<span style="color: red">*</span>
 		Notification:<br>

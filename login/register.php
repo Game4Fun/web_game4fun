@@ -10,7 +10,9 @@
 		header("Location: business_reg.php");
     	exit;
 	}else {
-		echo "no way, you have no power to do this";
+		$_SESSION["rep"] = "no way, you have no power to do this";
+		header("Location: login_next.php");
+		exit;
 	}
 
 ?>

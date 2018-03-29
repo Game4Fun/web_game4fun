@@ -43,7 +43,12 @@ session_start();
 		<input type="number" name="age" value="0" min="0" max="100">
 		<br><br>
 		Country:<br>
-		<input type="text" name="country" value=" " maxlength="20">
+		<select  name="country" style="color:black">
+			<option value=""></option>
+    <option value="Afghanistan">Afghanistan</option>
+    <option value="Albania">Albania</option>
+    <option value="Algeria">Algeria</option>
+</select>
 		<br><br>
 		<span style="color: red">*</span>
 		Notification:<br>

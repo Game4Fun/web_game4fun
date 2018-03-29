@@ -32,10 +32,6 @@ if ($result->num_rows > 0) {
 
 if ($valid) {
 
-	if (preg_match('/[A-Za-z].*/', $country))
-	{
-		$_SESSION["rep"] = "plz country name only has characters";
-	} else {
 			// prepare and bind
 		$stmt = $conn->prepare("UPDATE personaluser SET userName=?, password=?, mail=?, gender=?, country=?, notification=?, age=? WHERE userID=?");
 		$stmt->bind_param("sssssiii", $uname, $psw, $email, $gender, $country, $notif, $age, $_SESSION["uid"]);
@@ -54,7 +50,6 @@ if ($valid) {
 		} else {
 			$_SESSION["rep"] = "update fail, plz try again";
 		}
-	}
 
 }
 
