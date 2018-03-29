@@ -25,14 +25,15 @@ table, th, td {
 }
 </style>
 <body>
-  <h2>Interesting information of Game</h2>
+  <h1 style="text-align: center;">Interesting information of Game and Game Company</h1>
+  <br>
   <h3>
     <form action="g_no.php" method= "POST"> 
       The
       <select name="n_o" onchange="this.form.submit()">
         <option value="???" <?php if(isset($_SESSION["g"]) && $_SESSION["g"] == "???") echo "selected";?>>???</option>
-        <option value="Newest" <?php if(isset($_SESSION["g"]) && $_SESSION["g"] == "Newest") echo "selected";?>>Newest</option>
-        <option value="Oldest" <?php if(isset($_SESSION["g"]) && $_SESSION["g"] == "Oldest") echo "selected";?>>Oldest</option>
+        <option value="Newest" <?php if(isset($_SESSION["g"]) && $_SESSION["g"] == "Newest") echo "selected";?>>latest</option>
+        <option value="Oldest" <?php if(isset($_SESSION["g"]) && $_SESSION["g"] == "Oldest") echo "selected";?>>first</option>
       </select>
       Game in our website is
       <?php
@@ -58,8 +59,8 @@ table, th, td {
         The
         <select name="pop" onchange="this.form.submit()">
           <option value="???" <?php if(isset($_SESSION["p"]) && $_SESSION["p"] == "???") echo "selected";?>>???</option>
-          <option value="Most" <?php if(isset($_SESSION["p"]) && $_SESSION["p"] == "Most") echo "selected";?>>Most</option>
-          <option value="Least" <?php if(isset($_SESSION["p"]) && $_SESSION["p"] == "Least") echo "selected";?>>Lest</option>
+          <option value="Most" <?php if(isset($_SESSION["p"]) && $_SESSION["p"] == "Most") echo "selected";?>>most</option>
+          <option value="Least" <?php if(isset($_SESSION["p"]) && $_SESSION["p"] == "Least") echo "selected";?>>least</option>
         </select>
         popular Game Company in our website is
         <?php
