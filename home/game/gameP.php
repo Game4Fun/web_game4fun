@@ -1,7 +1,3 @@
-
-
-
-
 <?php
 include("../../mysqli_connect.php");
 session_start();
@@ -33,6 +29,7 @@ td, th {
    table, th, td {
   border: 1px solid black;
   border-collapse: collapse;
+  cellpadding="10"；
 }
 </style>
 </head>
@@ -49,7 +46,7 @@ td, th {
       }
 
 	  
-      echo '<table border = "2">
+      echo '<table>
       <thead>
       <tr>
       <th>GName</th>
@@ -119,7 +116,7 @@ td, th {
         <tr>
         <th>Title</th>
         <th>Time</th>
-		<th>Thumbup<th>
+		<th>Thumbup</th>
         </tr>
         </thead>
         <tbody>';
@@ -152,22 +149,27 @@ td, th {
 			<td>'.$thumbup.'</td>
             </tr>';
 			
-	        echo '<table>
-        <thead>
-        <tr>
-        <th>Content<th>
-        </tr>
-        </thead>
-        <tbody>';
-	    
-		     echo '<tr>
-            <td>'.$row['text'].'</td>
-
-            </tr>';
-	
-	    		echo '
+				    		echo '
       </tbody>
-      </table><br>';
+      </table>';
+
+			
+ echo '<table>
+      <thead>
+      <tr>
+      <th>Content</th>
+      </tr>
+      </thead>
+      <tbody>';
+	  
+	  echo '<tr>
+	   <td> '.$row['text'].'</td>
+	   </tr>' ;
+	  
+	       echo '
+      </tbody>
+      </table>'; 
+	
 
 	  		
 			
