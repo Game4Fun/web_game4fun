@@ -20,7 +20,7 @@ session_start();
 		<b id = "form">
 			<input type="radio" name="utype" value="Personal" <?php if($_SESSION["utype"] == "Personal") { echo "checked";}?>>Personal
 			<input type="radio" name="utype" value="Business" <?php if($_SESSION["utype"] == "Business") { echo "checked";}?>> Business
-			<input type="radio" name="utype" value="Admin" <?php if($_SESSION["utype"] == "Admin") { echo "checked";}?>>admin<br>
+			<input type="radio" name="utype" value="Admin" <?php if($_SESSION["utype"] == "Admin") { echo "checked";}?>>Admin<br>
 			<br>
 			User Name:
 		<br>

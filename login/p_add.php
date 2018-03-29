@@ -17,7 +17,7 @@ $_SESSION["rep"] = "";
 
 if ($result->num_rows > 0) {
     	// duplicate username
-	$_SESSION["rep"] = "plz using other user name";
+	$_SESSION["rep"] = "Username already exists.Please try another username.";
 } else {
 
 	$res = mysqli_query($conn, "SELECT userID from personaluser ORDER BY userID DESC LIMIT 1");
@@ -30,13 +30,13 @@ if ($result->num_rows > 0) {
 
 	if ($stmt->execute()) {
 			//insert fail
-		$_SESSION["rep"] = "register success, try log in";
+		$_SESSION["rep"] = "Registered successfully! You can login now.";
 		header("Location: login_next.php");
 		exit;
 
 	} else {
 			//insert fail
-		$_SESSION["rep"] = "register fail, plz try again";
+		$_SESSION["rep"] = "Registration failed! Pleanse try again later.";
 	}
 }
 

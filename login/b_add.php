@@ -16,7 +16,7 @@
 
 	if ($result->num_rows > 0) {
     	// duplicate username
-		$_SESSION["rep"] = "plz using other user name";
+		$_SESSION["rep"] = "Username already existed. Please try another username";
 	} else {
 
 		$res = mysqli_query($conn, "SELECT userID from businessuser ORDER BY userID DESC LIMIT 1");
