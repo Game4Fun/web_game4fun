@@ -28,10 +28,10 @@ session_start();
     $_SESSION["rep"] = " "; 
     ?>
   </b>
-  <p>Type to serch category</p>
+  <p>Type to search category</p>
   <form style='text-align: left;' action='c_add.php' target='_self' method="post">
     <input class="form-control" required name="cate" id="myInput" type="text" placeholder="Search..">
-    <input type="submit" value="sadd a new Category">
+    <input type="submit" value="add a new Category">
   </form> 
   <table class="table table-bordered table-striped">
     <thead>
