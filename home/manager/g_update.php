@@ -6,6 +6,23 @@ session_start();
 $gname = $_POST["gname"];
 $ginfo = $_POST["ginfo"];
 
+// check category select
+$gcate = array();
+foreach ($_SESSION["allcates"] as $cate) {
+	if (isset($_POST[$cate])) {
+		array_push($gcate, $cate);
+	} 
+}
+
+
+if (empty($gcate)) {
+	$_SESSION["rep"] = "you must select at least one category";
+	mysqli_close($conn);
+
+	header("Location: g_info.php");
+	exit;
+}
+
 
 // prepare and bind
 $stmt = $conn->prepare("UPDATE game SET gName=?, gameInfo=? WHERE gameID=?");

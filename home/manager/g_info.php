@@ -26,17 +26,21 @@ textarea {
 </style>
 <body>
 	<form style="text-align: left;" action="g_update.php" method= "POST" target="_self">
-		<caption>Game information</caption>
+		<h2 style="font-size: 20; size: 20"><caption>Game information</caption></h2>
 		<span>(<span style="color: red">*</span> part must be filled)</span><br>
+		<br>
 		<br>
 		<span style="color: red">*</span>
 		Game Name(less than 20 characters):<br>
 		<input type="text" name="gname" maxlength="20" required value=<?php echo $_SESSION["gname"];?>>
 		<br>
+		<br>
 		<span style="color: red">*</span>
 		Release date (no change after release):<br>
 		<input type="text" name="date" required readonly value=<?php echo $_SESSION["gsince"];?>>
 		<br>
+		<br>
+		<span style="color: red">*</span>
 		Category:<br>
 		<?php
 		include("../../mysqli_connect.php");
@@ -64,6 +68,7 @@ textarea {
 			echo ">".$cate;
 		}
 		?>
+		<br>
 		<br>
 		<span style="color: red">*</span>
 		Game description:<br>
