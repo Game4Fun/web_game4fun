@@ -180,7 +180,13 @@ td, th {
             <input type="hidden" name="rID" value="<?php echo $row['rID']?>"><br>
             <input type="submit" value='Thumbup' />
 			<br>
-			<?php  if (isset($_SESSION['tres'])){echo $_SESSION['tres'];}  ?>
+			<?php  if (isset($_SESSION['tres']))
+			
+			
+			{echo     '<font size="3" color="red">'.$_SESSION['tres'].'</font>';}  ?>
+			
+			
+
 			<?php  $_SESSION['tres']="";?>
 			<br>
 			<br>
@@ -225,7 +231,7 @@ td, th {
 			<input type="hidden" name="rID" value="<?php echo $row['rID']?>"><br>
             <input type="submit" />
 			<br>
-			<?php  if (isset($_SESSION['cres'])){echo $_SESSION['cres'];}  ?>
+			<?php  if (isset($_SESSION['cres'])){echo '<font size="3" color="red">'.$_SESSION['cres'].'</font>';} ?>
 			<?php  $_SESSION['cres']="";?>
 			<br><br>
         </form>
@@ -261,7 +267,9 @@ td, th {
 
                 <input type="submit" />
 				<br>
-				<?php  if (isset($_SESSION['rres'])){echo $_SESSION['rres'];}  ?>
+				<?php  if (isset($_SESSION['rres']))
+				
+				{echo '<font size="3" color="red">'.$_SESSION['rres'].'</font>';}  ?>
 				<?php  $_SESSION['rres']="";?>
 				<br>
 				<br>
