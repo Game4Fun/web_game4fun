@@ -2,12 +2,11 @@
 session_start();
 include("../../mysqli_connect.php");
 
-
+$_SESSION["fans"] = array();
 if(isset($_POST["fan"])) {
 	$_SESSION["f"] = $_POST["fan"];
-	if($_POST["fan"] != "NO") {
+	if($_POST["fan"] != "No") {
 		// checke is compnay has release any game
-
 		$sql = 'SELECT * FROM game WHERE userID="'.$_SESSION["uid"].'"';
 		$result = mysqli_query($conn, $sql);
 
@@ -25,7 +24,6 @@ if(isset($_POST["fan"])) {
 
 			if ($result->num_rows > 0) {
 				$_SESSION["nogame"]  = "no";
-				$_SESSION["fans"] = array();
 				while($row = $result->fetch_assoc()) {
 					array_push($_SESSION["fans"], $row["userName"]);
 				}

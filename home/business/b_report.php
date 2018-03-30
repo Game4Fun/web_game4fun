@@ -40,7 +40,7 @@ table, th, td {
       
       <?php
       if (isset($_SESSION["f"]) && $_SESSION["f"] == "Yes") {
-        if(isset($_SESSION["fans"])) {
+        if(!empty($_SESSION["fans"])) {
           foreach ($_SESSION["fans"] as $name) {
             echo $name;
             echo " ";
