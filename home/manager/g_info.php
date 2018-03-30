@@ -7,11 +7,17 @@ session_start();
 	<title>Game update Page</title>
 </head>
 <style>
+
 input[type=text] {
 	width: 40%;
 	padding: 12px 20px;
 	margin: 8px 0;
 	box-sizing: border-box;
+}
+#name
+{
+	width: 20%;
+  	height: 45px;
 }
 textarea {
 	width: 100%;
@@ -32,7 +38,7 @@ textarea {
 		<br>
 		<span style="color: red">*</span>
 		Game Name(less than 20 characters):<br>
-		<input type="text" name="gname" maxlength="20" required value=<?php echo $_SESSION["gname"];?>>
+		<textarea id="name" type="text" rows="1" cols="20" name="gname" maxlength="20" required><?php $gname=$_SESSION["gname"]; echo $gname;?></textarea>
 		<br>
 		<br>
 		<span style="color: red">*</span>

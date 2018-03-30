@@ -23,6 +23,11 @@ textarea {
 	background-color: #f8f8f8;
 	resize: none;
 }
+#name
+{
+	width: 20%;
+  	height: 45px;
+}
 </style>
 <body>
 	<form style="text-align: left;" action="r_update.php" method= "POST" target="_self">
@@ -31,11 +36,11 @@ textarea {
 		<br>
 		<span style="color: red">*</span>
 		Game Name (you can not change this):<br>
-		<input type="text" name="gName" value=<?php echo $_SESSION["gName"];?> maxlength="20" required readonly>
+		<textarea id="name" type="text" name="gName" maxlength="20" required readonly><?php echo $_SESSION["gName"];?></textarea>
 		<br>
 		<span style="color: red">*</span>
 		Title:<br>
-		<input id="title" type="text" name="title" maxlegth="100" required value=<?php echo $_SESSION["rtitle"];?>>
+		<textarea id="name" type="text" name="title" maxlegth="100" required><?php echo $_SESSION["rtitle"];?></textarea>
 		<br>
 		Text:<br>
 		<textarea type="text" name="text" required><?php echo $_SESSION["rtext"];?></textarea>
